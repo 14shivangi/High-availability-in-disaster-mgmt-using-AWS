@@ -1,5 +1,5 @@
 # High-availability-in-disaster-mgmt-using-AWS
-High Availability Disaster Management project using AWS with multi-region failover, automated backups, and DR runbook.
+High Availability Disaster Management project using AWS with multi-region failover, automated backups.
 
 # Project Overview:
 This project demonstrates how to design and implement a highly available disaster management system on AWS.
