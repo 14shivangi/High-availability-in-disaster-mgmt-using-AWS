@@ -37,7 +37,7 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 ### Prerequisites
 - AWS Account with necessary permissions
 - AWS CLI installed and configured
-- 
+ 
 ### Steps
 1. **Create VPCs** in multiple regions with subnets in multiple AZs.
 2. **Launch EC2 instances** in each region/AZ for application servers.
