@@ -23,12 +23,19 @@ Implement monitoring, backup, and cost-optimized infrastructure.
 High-level components:
 
 Route 53 – DNS failover & health checks.
+
 CloudFront – Low-latency content delivery & DDoS protection.
+
 Application Load Balancer (ALB) – Distributes traffic across healthy instances.
+
 Auto Scaling Group (ASG) – Automatically scales EC2 instances.
+
 RDS / Aurora Global DB – Managed database with multi-AZ & cross-region replication.
+
 S3 with Cross-Region Replication (CRR) – For storing and replicating disaster reports, files, and geo-data.
+
 SNS & SQS – For reliable alerts and message queuing.
+
 IAM & KMS – Security, access control, and encryption.
 
 # Implementation Steps: 
