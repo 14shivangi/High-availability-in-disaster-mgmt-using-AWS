@@ -29,8 +29,6 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 - Amazon RDS (Multi-AZ)
 - Amazon Route 53
 - Elastic Load Balancer (ALB/ELB)
-- Amazon CloudFront
-- Amazon CloudWatch
 
 ---
 
@@ -39,8 +37,7 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 ### Prerequisites
 - AWS Account with necessary permissions
 - AWS CLI installed and configured
-- Terraform or CloudFormation (optional) for infrastructure as code
-
+- 
 ### Steps
 1. **Create VPCs** in multiple regions with subnets in multiple AZs.
 2. **Launch EC2 instances** in each region/AZ for application servers.
@@ -59,7 +56,3 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 - In the event of failures in one region/AZ, traffic is redirected without downtime.
 
 ---
-
-- AWS Multi-Region Architecture Best Practices
-- Amazon Route 53 Failover Documentation
-- AWS Well-Architected Framework
