@@ -1,78 +1,65 @@
-# High-availability-in-disaster-mgmt-using-AWS
-High Availability Disaster Management project using AWS with multi-region failover, automated backups.
+# High Availability Disaster Management System on AWS
 
-# Project Overview:
-This project demonstrates how to design and implement a highly available disaster management system on AWS.
-The goal is to ensure that critical applications (such as incident reporting, dashboards, and alerts) remain available and resilient, even in the event of infrastructure failures, natural disasters, or regional outages.
+## Overview
+This project demonstrates a **high availability and fault-tolerant architecture** for disaster management using AWS cloud services. It is designed to ensure continuity of critical disaster-response services during outages caused by natural disasters (floods, earthquakes) or technical failures (server outages).
 
-It uses multi-AZ and multi-region architecture, automated failover, data replication, and monitoring to achieve strong RTO (Recovery Time Objective) and RPO (Recovery Point Objective).
+The system leverages multi-region and multi-Availability Zone (AZ) deployments to maintain service availability, automatic failover, data replication, and continuous monitoring.
 
-# Objectives:
+---
 
-Provide uninterrupted access to disaster management services.
+## Key Features
+- **Multi-Region & Multi-AZ Deployment:** Distributes compute and database resources across multiple availability zones and geographic regions for fault tolerance.
+- **Compute:** Uses EC2 instances deployed in multiple AZs and regions.
+- **Database:** Amazon RDS with multi-AZ replication and automated backups for data durability.
+- **Traffic Routing & Failover:** Amazon Route 53 DNS service to route traffic and perform health checks for automatic failover.
+- **Load Balancing:** Elastic Load Balancers (ELB) distribute client requests across healthy EC2 instances.
+- **Content Delivery:** Amazon CloudFront CDN for resilient and fast content delivery.
+- **Backup & Monitoring:** Automated backups, CloudWatch monitoring, and alarms ensure service reliability.
+- **Disaster Recovery Ready:** Keeps critical services like data ingestion, storage, web applications, and notifications operational during disasters.
 
-Minimize downtime with high availability (HA).
+---
 
-Replicate critical data across regions for disaster recovery (DR).
+## Architecture Diagram
+(Include your architecture diagram here or link to an image file in the repo)
 
-Enable automated failover using AWS Route 53 and health checks.
+---
 
-Implement monitoring, backup, and cost-optimized infrastructure.
+## AWS Services Used
+- Amazon EC2
+- Amazon RDS (Multi-AZ)
+- Amazon Route 53
+- Elastic Load Balancer (ALB/ELB)
+- Amazon CloudFront
+- Amazon CloudWatch
 
-# Architecture:
-High-level components:
+---
 
-Route 53 – DNS failover & health checks.
+## Setup & Deployment
 
-Application Load Balancer (ALB) – Distributes traffic across healthy instances.
+### Prerequisites
+- AWS Account with necessary permissions
+- AWS CLI installed and configured
+- Terraform or CloudFormation (optional) for infrastructure as code
 
-Auto Scaling Group (ASG) – Automatically scales EC2 instances.
+### Steps
+1. **Create VPCs** in multiple regions with subnets in multiple AZs.
+2. **Launch EC2 instances** in each region/AZ for application servers.
+3. **Set up Amazon RDS** multi-AZ instance for database with automated backup.
+4. **Configure Route 53** with health checks and failover routing policies.
+5. **Deploy Elastic Load Balancers** in front of EC2 instances per region.
+6. **Set up CloudFront** distribution for your web application.
+7. **Enable CloudWatch** monitoring and configure alarms.
+8. **Implement automated backups and failover** testing.
 
-RDS / Aurora Global DB – Managed database with multi-AZ & cross-region replication.
+---
 
-S3 with Cross-Region Replication (CRR) – For storing and replicating disaster reports, files, and geo-data.
+## Usage
+- Access the disaster management application via the CloudFront URL.
+- Route 53 ensures that traffic is sent to healthy endpoints automatically.
+- In the event of failures in one region/AZ, traffic is redirected without downtime.
 
-SNS & SQS – For reliable alerts and message queuing.
+---
 
-IAM & KMS – Security, access control, and encryption.
-
-# Implementation Steps: 
-
-VPC Setup – Create VPC, subnets (public/private), and security groups in at least 2 AZs.
-
-Compute Layer – Deploy EC2/ECS with Auto Scaling and ALB.
-
-Database Layer – Launch RDS (Aurora Global DB recommended) with cross-region replication.
-
-Storage – Create S3 buckets with Cross-Region Replication (CRR) enabled.
-
-Failover – Configure Route 53 with health checks and failover routing policy.
-
-Monitoring – Set up CloudWatch alarms, CloudTrail logs, and SNS notifications.
-
-Backup – Automate EBS snapshots and copy them to DR region.
-
-Security – Enforce IAM least privilege, enable encryption (KMS), and set up AWS WAF/Shield.
-
-Testing – Simulate failures (AZ outage, region failover) and validate RTO/RPO.
-
-# Features: 
-Multi-AZ and multi-region deployment.
-
-Automated failover using Route 53.
-
-Real-time monitoring with CloudWatch.
-
-Data durability with S3 CRR and RDS replication.
-
-Backup & restore strategy with snapshots.
-
-Secure and cost-optimized design.
-
-# Disaster Recovery Strategy:
-
-Warm standby: Minimal resources in DR region, scale up on failover.
-
-Cold backup: Store data only, spin up resources on demand (lowest cost, higher RTO).
-
-This project uses a Warm Standby DR approach to balance cost and availability.
+- AWS Multi-Region Architecture Best Practices
+- Amazon Route 53 Failover Documentation
+- AWS Well-Architected Framework
