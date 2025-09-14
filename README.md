@@ -55,4 +55,3 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 - Route 53 ensures that traffic is sent to healthy endpoints automatically.
 - In the event of failures in one region/AZ, traffic is redirected without downtime.
 
----
