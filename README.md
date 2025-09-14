@@ -20,42 +20,15 @@ Enable automated failover using AWS Route 53 and health checks.
 Implement monitoring, backup, and cost-optimized infrastructure.
 
 # Architecture:
-
 High-level components:
-
 Route 53 – DNS failover & health checks.
-
 CloudFront – Low-latency content delivery & DDoS protection.
-
 Application Load Balancer (ALB) – Distributes traffic across healthy instances.
-
 Auto Scaling Group (ASG) – Automatically scales EC2 instances.
-
 RDS / Aurora Global DB – Managed database with multi-AZ & cross-region replication.
-
 S3 with Cross-Region Replication (CRR) – For storing and replicating disaster reports, files, and geo-data.
-
 SNS & SQS – For reliable alerts and message queuing.
-
-CloudWatch & CloudTrail – Monitoring, logging, and auditing.
-
 IAM & KMS – Security, access control, and encryption.
-
-📊 Architecture Diagram
-flowchart TD
-    A[Users / Field App] --> B[Route 53 DNS Failover]
-    B --> C[CloudFront]
-    C --> D[ALB - Region A]
-    C --> E[ALB - Region B (DR Region)]
-    D --> F[EC2 / ECS in ASG - Region A]
-    E --> G[EC2 / ECS in ASG - Region B]
-    F --> H[RDS Primary (Region A)]
-    G --> I[RDS Read Replica (Region B)]
-    H <--> I
-    F --> J[S3 (Region A)]
-    J --> K[S3 Replicated (Region B)]
-    F --> L[SNS / SQS]
-    L --> M[Subscribers / Notification Systems]
 
 # Implementation Steps: 
 
