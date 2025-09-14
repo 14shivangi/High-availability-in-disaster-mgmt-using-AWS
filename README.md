@@ -1,14 +1,13 @@
 # High-availability-in-disaster-mgmt-using-AWS
 High Availability Disaster Management project using AWS with multi-region failover, automated backups, and DR runbook.
 
-Project Overview
-
+# Project Overview:
 This project demonstrates how to design and implement a highly available disaster management system on AWS.
 The goal is to ensure that critical applications (such as incident reporting, dashboards, and alerts) remain available and resilient, even in the event of infrastructure failures, natural disasters, or regional outages.
 
 It uses multi-AZ and multi-region architecture, automated failover, data replication, and monitoring to achieve strong RTO (Recovery Time Objective) and RPO (Recovery Point Objective).
 
-🎯 Objectives
+# Objectives:
 
 Provide uninterrupted access to disaster management services.
 
@@ -20,7 +19,7 @@ Enable automated failover using AWS Route 53 and health checks.
 
 Implement monitoring, backup, and cost-optimized infrastructure.
 
-🏗️ Architecture
+# Architecture:
 
 High-level components:
 
@@ -58,7 +57,7 @@ flowchart TD
     F --> L[SNS / SQS]
     L --> M[Subscribers / Notification Systems]
 
-⚙️ Implementation Steps
+# Implementation Steps: 
 
 VPC Setup – Create VPC, subnets (public/private), and security groups in at least 2 AZs.
 
@@ -78,8 +77,7 @@ Security – Enforce IAM least privilege, enable encryption (KMS), and set up AW
 
 Testing – Simulate failures (AZ outage, region failover) and validate RTO/RPO.
 
-✅ Features
-
+# Features: 
 Multi-AZ and multi-region deployment.
 
 Automated failover using Route 53.
@@ -92,7 +90,7 @@ Backup & restore strategy with snapshots.
 
 Secure and cost-optimized design.
 
-⚡ Disaster Recovery Strategy
+# Disaster Recovery Strategy:
 
 Hot standby: Both regions active (higher cost, lowest RTO).
 
@@ -101,13 +99,3 @@ Warm standby: Minimal resources in DR region, scale up on failover.
 Cold backup: Store data only, spin up resources on demand (lowest cost, higher RTO).
 
 This project uses a Warm Standby DR approach to balance cost and availability.
-
-📋 Deliverables
-
-Architecture diagram (Mermaid + PNG).
-
-Implementation guide (Terraform/CloudFormation optional).
-
-Disaster Recovery (DR) Runbook with step-by-step failover instructions.
-
-DR drill report (test failover and measure recovery time).
