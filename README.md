@@ -71,25 +71,8 @@ Secure and cost-optimized design.
 
 # Disaster Recovery Strategy:
 
-Hot standby: Both regions active (higher cost, lowest RTO).
-
 Warm standby: Minimal resources in DR region, scale up on failover.
 
 Cold backup: Store data only, spin up resources on demand (lowest cost, higher RTO).
 
 This project uses a Warm Standby DR approach to balance cost and availability.
-
-# flowchart TD:
-    A[Users / Field App] --> B[Route 53 DNS Failover]
-    B --> C[CloudFront]
-    C --> D[ALB - Region A]
-    C --> E[ALB - Region B (DR Region)]
-    D --> F[EC2 / ECS in ASG - Region A]
-    E --> G[EC2 / ECS in ASG - Region B]
-    F --> H[RDS Primary (Region A)]
-    G --> I[RDS Read Replica (Region B)]
-    H <--> I
-    F --> J[S3 (Region A)]
-    J --> K[S3 Replicated (Region B)]
-    F --> L[SNS / SQS]
-    L --> M[Subscribers / Notification Systems]
