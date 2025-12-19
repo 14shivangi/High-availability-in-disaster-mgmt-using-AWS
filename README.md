@@ -1,6 +1,7 @@
 # High Availability Disaster Management System on AWS
 
-## Overview
+## Overview:
+
 This project demonstrates a **high availability and fault-tolerant architecture** for disaster management using AWS cloud services. It is designed to ensure continuity of critical disaster-response services during outages caused by natural disasters (floods, earthquakes) or technical failures (server outages).
 
 The system leverages multi-region and multi-Availability Zone (AZ) deployments to maintain service availability, automatic failover, data replication, and continuous monitoring.
