@@ -20,6 +20,16 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 
 ---
 
+
+## 📌 Traffic Flow
+
+1. User accesses the application domain
+2. **Route 53** routes traffic to the nearest healthy region
+3. **Load Balancer** distributes requests to EC2 instances
+4. **Auto Scaling** adjusts instance count based on demand
+5. If one region becomes unavailable, **Route 53 automatically redirects traffic** to the secondary region
+
+
 ## Architecture Diagram
 (Include your architecture diagram here or link to an image file in the repo)
 
