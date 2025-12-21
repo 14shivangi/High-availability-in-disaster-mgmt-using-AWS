@@ -1,4 +1,4 @@
-# High Availability Disaster Management System on AWS
+# High Availability & Disaster Recovery System on AWS
 
 ## Overview:
 
