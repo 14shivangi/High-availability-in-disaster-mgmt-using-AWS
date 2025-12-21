@@ -1,4 +1,4 @@
-# High Availability & Disaster Recovery System on AWS
+# High Availability & Disaster Recovery System on AWS - Static Website
 
 ## Overview:
 
