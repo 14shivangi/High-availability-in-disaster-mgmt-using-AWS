@@ -45,7 +45,7 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 
 ## Setup & Deployment
 
-### Prerequisites
+### Prerequisites:
 - AWS Account with necessary permissions
 - AWS CLI installed and configured
  
