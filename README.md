@@ -19,7 +19,7 @@ The system leverages multi-region and multi-Availability Zone (AZ) deployments t
 - **Disaster Recovery Ready:** Keeps critical services like data ingestion, storage, web applications, and notifications operational during disasters.
 
 ---
-
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/78c4cdba-d112-4b07-b7a1-f4af30630574" />
 
 ## 📌 Traffic Flow
 
